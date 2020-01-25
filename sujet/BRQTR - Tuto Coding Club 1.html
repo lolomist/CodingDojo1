@@ -262,6 +262,7 @@ $ <span class="sf_code_function">sudo</span> <span class="sf_code_function">make
 $ <span class="sf_code_function">mkdir</span> tmp
 $ <span class="sf_code_function">cd</span> tmp
 $ <span class="sf_code_function">mkdir</span> stream
+$ <span class="sf_code_function">cd</span> ..
 $ raspistill -w 640 -h 480 -q 5 -o tmp/stream/pic.jpg -tl 500 -t 9999999</code></pre>
 <p><br></p>
 <blockquote>
@@ -372,7 +373,7 @@ conf <span class="sf_code_operator">=</span> json<span class="sf_code_punctuatio
 <pre><code class='code-multiline' lang='python'>camera <span class="sf_code_operator">=</span> PiCamera<span class="sf_code_punctuation">()</span>
 camera<span class="sf_code_punctuation">.</span>resolution <span class="sf_code_operator">=</span> <span class="sf_code_builtin">tuple</span><span class="sf_code_punctuation">(</span>conf<span class="sf_code_punctuation">[</span><span class="sf_code_string">"resolution"</span><span class="sf_code_punctuation">])</span>
 camera<span class="sf_code_punctuation">.</span>framerate <span class="sf_code_operator">=</span> conf<span class="sf_code_punctuation">[</span><span class="sf_code_string">"fps"</span><span class="sf_code_punctuation">]</span>
-rawCapture <span class="sf_code_operator">=</span> PiRGBArray<span class="sf_code_punctuation">(</span>caméra<span class="sf_code_punctuation">,</span> size<span class="sf_code_operator">=</span><span class="sf_code_builtin">tuple</span><span class="sf_code_punctuation">(</span>conf<span class="sf_code_punctuation">[</span><span class="sf_code_string">"resolution"</span><span class="sf_code_punctuation">]))</span>
+rawCapture <span class="sf_code_operator">=</span> PiRGBArray<span class="sf_code_punctuation">(</span>camera<span class="sf_code_punctuation">,</span> size<span class="sf_code_operator">=</span><span class="sf_code_builtin">tuple</span><span class="sf_code_punctuation">(</span>conf<span class="sf_code_punctuation">[</span><span class="sf_code_string">"resolution"</span><span class="sf_code_punctuation">]))</span>
 
 <span class="sf_code_keyword">print</span><span class="sf_code_punctuation">(</span><span class="sf_code_string">"[INFO] warming up…"</span><span class="sf_code_punctuation">)</span>
 time<span class="sf_code_punctuation">.</span>sleep<span class="sf_code_punctuation">(</span>conf<span class="sf_code_punctuation">[</span><span class="sf_code_string">"camera_warmup_time"</span><span class="sf_code_punctuation">])</span>
