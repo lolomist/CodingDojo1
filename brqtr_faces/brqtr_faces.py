@@ -50,7 +50,7 @@ while True:
 	# Convert BGR to RGB for openCV.
 	# Resize Width in the aim to speedup processing
 	#
-	rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+	#rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) # Useless with the following line
 	rgb = imutils.resize(frame, width=250)
 	r = frame.shape[1] / float(rgb.shape[1])
 
